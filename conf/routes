@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                           controllers.DriverController.listCars()
+GET     /:string                    controllers.DriverController.retrieve(license_plate:String)
+POST    /                           controllers.DriverController.create(request: Request)
+PUT     /                           controllers.DriverController.update(request: Request)
+DELETE  /:string                    controllers.DriverController.delete(license_plate:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
